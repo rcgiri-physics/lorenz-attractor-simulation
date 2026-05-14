@@ -216,3 +216,26 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==============================================================================
+# PHYSICS RESEARCH SPECIFIC IGNORES
+# ==============================================================================
+
+# Ignore raw numerical trajectory data (prevents repo bloat)
+data/*.npy
+data/*.csv
+data/*.dat
+data/*.hdf5
+
+# Ignore heavy media files (animations of orbits)
+# We keep the plots/ folder, but link videos from external sources
+plots/*.mp4
+plots/*.avi
+plots/*.mov
+plots/*.gif
+plots/*
+#!plots/imp_files.gif
+
+# Keep the directory structure even if folders are empty
+!data/.gitkeep
+!plots/.gitkeep

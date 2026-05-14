@@ -1,0 +1,35 @@
+[MASTER]
+# Specify directories to ignore
+ignore=data,docs,.git,__pycache__,.pytest_cache
+
+# Allow C-extensions for SciPy and NumPy to prevent false positive import errors
+extension-pkg-whitelist=numpy,scipy,matplotlib
+
+[MESSAGES CONTROL]
+# Disable rules that clash with standard scientific computing workflows:
+# C0114: missing-module-docstring (We don't need docstrings for every single script file)
+# R0913: too-many-arguments (Physics functions often require many parameters)
+# R0914: too-many-locals (Complex integration functions generate many local variables)
+# W0621: redefined-outer-name (Common when defining test fixtures or parameter dictionaries)
+disable=
+    missing-module-docstring,
+    too-many-arguments,
+    too-many-locals,
+    redefined-outer-name
+
+[FORMAT]
+# Extend line length to accommodate longer mathematical formulas and matrix arrays
+max-line-length=120
+
+[BASIC]
+# Explicitly allow standard 1-2 character physics and math variables
+good-names=
+    x, y, z,     # Spatial coordinates / Lorenz variables
+    t, dt,       # Time variables
+    i, j, k,     # Iterators
+    m, L, g,     # Pendulum remnants (just in case)
+    dx, dy, dz,  # Derivatives
+    ax, fig,     # Matplotlib standard variables
+    df, sol,     # Pandas/SciPy standard returns
+    rho,         # Rayleigh parameter
+    _,           # Throwaway variables
