@@ -15,10 +15,15 @@ Transitioning the Rayleigh parameter into the chaotic regime ($\rho = 28$) shatt
 
 ![Lorenz Butterfly](data/trajectories/lorenz_butterfly_3d.png)
 
+## Phase 3: Bifurcation & The Transition to Chaos
+By sweeping the Rayleigh number ($\rho$) from 0 to 40 and plotting the local maxima of the $z$-coordinate, we can visualize the exact moment of the subcritical Hopf bifurcation ($\rho \approx 24.74$). The system transitions instantly from a predictable, stable equilibrium into aperiodic chaotic oscillation.
+
+![Bifurcation Diagram](data/analysis/lorenz_bifurcation.png)
+
 ## Project Roadmap
 - [x] **Phase 1:** Core Physics Engine & Fixed-Point Validation
 - [x] **Phase 2:** 3D Phase Space Kinematics (The Butterfly Attractor)
-- [ ] **Phase 3:** 1D Parameter Sweeps & Bifurcation Diagram
+- [x] **Phase 3:** 1D Parameter Sweeps & Bifurcation Diagram
 - [ ] **Phase 4:** Dissipative Chaos Quantification (Lyapunov Exponents)
 
 ## Repository Structure
