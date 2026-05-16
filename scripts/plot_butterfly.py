@@ -6,7 +6,7 @@ from scipy.integrate import solve_ivp
 
 # Ensure Python can find your 'src' module
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.mechanics import lorenz_derivatives
+from src.mechanics import lorenz_derivatives # pylint: disable=wrong-import-position
 
 if __name__ == "__main__":
     # The canonical chaotic parameters
@@ -49,8 +49,8 @@ if __name__ == "__main__":
     ax.view_init(elev=25, azim=-45)
 
     os.makedirs('data/trajectories', exist_ok=True)
-    filepath = 'data/trajectories/lorenz_butterfly_3d.png'
-    plt.savefig(filepath, bbox_inches='tight')
-    print(f"Saved chaotic 3D phase space plot to {filepath}")
+    FILEPATH = 'data/trajectories/lorenz_butterfly_3d.png'
+    plt.savefig(FILEPATH, bbox_inches='tight')
+    print(f"Saved chaotic 3D phase space plot to {FILEPATH}")
 
     plt.show()

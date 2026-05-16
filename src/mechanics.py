@@ -1,7 +1,4 @@
-import numpy as np
-
-
-def lorenz_derivatives(t, state, params):
+def lorenz_derivatives(_t, state, params):
     """
     Computes the time derivatives for the Lorenz system.
 

@@ -6,7 +6,7 @@ from scipy.integrate import solve_ivp
 
 # Ensure Python can find your 'src' module
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.mechanics import lorenz_derivatives
+from src.mechanics import lorenz_derivatives # pylint: disable=wrong-import-position
 
 if __name__ == "__main__":
     # Standard Prandtl and geometric factors, but a LOW Rayleigh number
@@ -42,4 +42,3 @@ if __name__ == "__main__":
     print("Saved plot to data/analysis/fixed_point_rho10.png")
 
     plt.show()
-
