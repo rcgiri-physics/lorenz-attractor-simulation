@@ -38,3 +38,16 @@ To visualize the onset of chaos, we swept the Rayleigh parameter ($\rho$) from $
 The resulting bifurcation diagram mathematically visualizes the Hopf bifurcation:
 * **Stable Regime ($\rho < 24.74$):** The local maxima form a single, clean curve. The fluid convection settles into a stable, non-fluctuating state.
 * **The Chaotic Onset ($\rho \approx 24.74$):** The solid line instantly explodes into a dense, scattered vertical band. This visually proves that the system never settles; instead, it continuously oscillates with aperiodic, unpredictable peak values, bounded only by the global topology of the strange attractor.
+
+## Log 04: Quantification of Chaos (Lyapunov Exponents)
+**Phase:** 4
+**Objective:** Mathematically verify extreme sensitivity to initial conditions.
+
+### 1. Benettin's Algorithm
+To quantify the separation rate of infinitesimally close trajectories, we integrated the extended variational equations (the Jacobian) alongside the main ODEs. By applying continuous QR decomposition over $t=1000$, we extracted the three Lyapunov exponents.
+
+### 2. Results & Proof of Dissipative Chaos
+* **$\lambda_1 \approx 0.90$**: The strictly positive maximum exponent confirms chaotic divergence (The Butterfly Effect).
+* **$\lambda_2 \approx 0.00$**: The neutral exponent, characteristic of continuous-time autonomous flows.
+* **$\lambda_3 \approx -14.57$**: The highly negative exponent forces phase space volume contraction.
+* **Validation:** $\sum \lambda_i \approx -13.67$, perfectly matching our analytical divergence calculation from Phase 1.
