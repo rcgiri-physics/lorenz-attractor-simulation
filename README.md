@@ -10,9 +10,14 @@ Before exploring the chaotic regime, the engine's dissipative accuracy was valid
 
 ![Fixed Point Validation](data/analysis/fixed_point_rho10.png)
 
+## Phase 2: The Strange Attractor
+Transitioning the Rayleigh parameter into the chaotic regime ($\rho = 28$) shatters the stable equilibria. The system continuously evolves along a bounded, non-intersecting fractal manifold, tracing the iconic 3D "Butterfly" wings.
+
+![Lorenz Butterfly](data/trajectories/lorenz_butterfly_3d.png)
+
 ## Project Roadmap
 - [x] **Phase 1:** Core Physics Engine & Fixed-Point Validation
-- [ ] **Phase 2:** 3D Phase Space Kinematics (The Butterfly Attractor)
+- [x] **Phase 2:** 3D Phase Space Kinematics (The Butterfly Attractor)
 - [ ] **Phase 3:** 1D Parameter Sweeps & Bifurcation Diagram
 - [ ] **Phase 4:** Dissipative Chaos Quantification (Lyapunov Exponents)
 
