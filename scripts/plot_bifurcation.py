@@ -7,7 +7,7 @@ from scipy.integrate import solve_ivp
 from scipy.signal import find_peaks
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.mechanics import lorenz_derivatives
+from src.mechanics import lorenz_derivatives # pylint: disable=wrong-import-position
 
 def compute_bifurcation():
     """Sweeps the Rayleigh parameter and plots the local maxima of z."""
@@ -57,7 +57,7 @@ def compute_bifurcation():
             print(f"Sweeping rho = {int(rho)}/40...")
 
     # Plotting
-    fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
+    __fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
     ax.scatter(rho_scatter, z_scatter, s=0.5, color='black', alpha=0.5)
 
     ax.set_title("Lorenz Attractor: Bifurcation Diagram (Local Maxima of $z$)", fontsize=14, fontweight='bold')
