@@ -26,3 +26,15 @@ By increasing the Rayleigh number past the critical threshold to $\rho = 28$, th
 Integrating the system over $t = 50$ seconds with $10,000$ high-definition steps reveals the canonical dual-lobe structure of the Lorenz attractor.
 * **The Dynamics:** The trajectory spirals outward from the center of one unstable lobe until it hits a topological boundary, gets ejected, and is caught by the other lobe.
 * **The Topology:** Because the system is deterministic, trajectories can never cross. Because it is dissipative, it is confined to a bounded volume. The result is an infinitely complex, non-repeating fractal shape in 3D phase space.
+
+## Log 03: 1D Parameter Sweeps & The Bifurcation Diagram
+**Phase:** 3
+**Objective:** Map the critical transition from stable equilibria into dissipative chaos.
+
+### 1. The Parameter Sweep
+To visualize the onset of chaos, we swept the Rayleigh parameter ($\rho$) from $0 \to 40$. For each discrete $\rho$ value, the system was integrated over a long time horizon ($t=50$). The initial transient data (the first 50%) was discarded, and the local maxima of the $z$-coordinate were extracted from the steady-state trajectory.
+
+### 2. Analysis of the 1D Map
+The resulting bifurcation diagram mathematically visualizes the Hopf bifurcation:
+* **Stable Regime ($\rho < 24.74$):** The local maxima form a single, clean curve. The fluid convection settles into a stable, non-fluctuating state.
+* **The Chaotic Onset ($\rho \approx 24.74$):** The solid line instantly explodes into a dense, scattered vertical band. This visually proves that the system never settles; instead, it continuously oscillates with aperiodic, unpredictable peak values, bounded only by the global topology of the strange attractor.
