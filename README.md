@@ -1,5 +1,10 @@
 # Lorenz Attractor Simulation: Dissipative Chaos
 
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Vectorized-013243?style=flat&logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-Validation-8CAAE6?style=flat&logo=scipy&logoColor=white)
+![LaTeX](https://img.shields.io/badge/LaTeX-Documentation-008080?style=flat)
+
 This repository serves as a numerical laboratory for exploring continuous 3D dissipative chaos. Modeling the Rayleigh-Bénard convection equations, this project visualizes phase space volume contraction, Hopf bifurcations, and the topological bounds of the canonical "Butterfly" strange attractor.
 
 ## Repository Focus
@@ -20,11 +25,14 @@ By sweeping the Rayleigh number ($\rho$) from 0 to 40 and plotting the local max
 
 ![Bifurcation Diagram](data/analysis/lorenz_bifurcation.png)
 
+## Phase 4: Chaos Quantification
+Utilizing continuous QR decomposition via Benettin's algorithm on the system's Jacobian, the spectrum of Lyapunov exponents was extracted as $\lambda = [0.8885, 0.0031, -14.5549]$. The positive maximum exponent ($\lambda_1 > 0$) mathematically establishes deterministic chaos and extreme sensitivity to initial conditions. The negative sum of the exponents ($\sum \lambda_i = -13.6633$) closely matches the theoretical trace of the Jacobian matrix ($-13.6667$), rigorously verifying both the global phase-space contraction rate and the preservation of geometric structure across the $10,000$-step integration horizon.
+
 ## Project Roadmap
 - [x] **Phase 1:** Core Physics Engine & Fixed-Point Validation
 - [x] **Phase 2:** 3D Phase Space Kinematics (The Butterfly Attractor)
 - [x] **Phase 3:** 1D Parameter Sweeps & Bifurcation Diagram
-- [ ] **Phase 4:** Dissipative Chaos Quantification (Lyapunov Exponents)
+- [x] **Phase 4:** Dissipative Chaos Quantification (Lyapunov Exponents)
 
 ## Repository Structure
 * `src/`: Contains the core non-linear ODEs in `mechanics.py`.
