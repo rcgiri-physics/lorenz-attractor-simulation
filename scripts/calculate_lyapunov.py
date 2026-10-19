@@ -39,6 +39,9 @@ def calculate_lyapunov():
 
     # Initialize state and an Identity matrix for perturbations
     state = np.array([1.0, 1.0, 1.0])
+    # Discard the transient so the average is taken on the attractor
+    state = solve_ivp(lorenz_derivatives, (0, 50), state, args=(params,),
+                      method='DOP853', rtol=1e-10, atol=1e-12).y[:, -1]
     w_matrix = np.eye(3)
     initial_ext = np.concatenate((state, w_matrix.flatten()))
 
@@ -55,7 +58,9 @@ def calculate_lyapunov():
         t_span = (0, t_step)
 
         # Integrate forward by one small time step
-        sol = solve_ivp(extended_system, t_span, current_ext, args=(params,), method='RK45')
+        # Tight tolerances: SciPy's defaults (rtol=1e-3) bias the exponents in the 3rd digit
+        sol = solve_ivp(extended_system, t_span, current_ext, args=(params,),
+                        method='DOP853', rtol=1e-10, atol=1e-12)
 
         # Extract new state and new W matrix
         new_state = sol.y[:3, -1]

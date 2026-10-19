@@ -26,7 +26,7 @@ By sweeping the Rayleigh number ($\rho$) from 0 to 40 and plotting the local max
 ![Bifurcation Diagram](data/analysis/lorenz_bifurcation.png)
 
 ## Phase 4: Chaos Quantification
-Utilizing continuous QR decomposition via Benettin's algorithm on the system's Jacobian, the spectrum of Lyapunov exponents was extracted as $\lambda = [0.8885, 0.0031, -14.5549]$. The positive maximum exponent ($\lambda_1 > 0$) mathematically establishes deterministic chaos and extreme sensitivity to initial conditions. The negative sum of the exponents ($\sum \lambda_i = -13.6633$) closely matches the theoretical trace of the Jacobian matrix ($-13.6667$), rigorously verifying both the global phase-space contraction rate and the preservation of geometric structure across the $10,000$-step integration horizon.
+Utilizing continuous QR decomposition via Benettin's algorithm on the system's Jacobian, the spectrum of Lyapunov exponents was extracted as $\lambda = [0.8948, 0.0005, -14.5620]$ (DOP853, rtol $10^{-10}$, transient of 50 time units discarded, average over 1000 time units; the literature value of $\lambda_1$ is about 0.906, and the last digits shift by about 0.01 with the averaging time). The positive maximum exponent ($\lambda_1 > 0$) establishes deterministic chaos. The sum of the exponents ($-13.6667$) matches the trace of the Jacobian, $-(\sigma + 1 + \beta) = -13.6667$, which checks the phase-space contraction rate. An earlier run with SciPy's default tolerances (rtol $10^{-3}$) gave $[0.8885, 0.0031, -14.5549]$; the gap in the sum ($-13.6633$) was solver error.
 
 ## Project Roadmap
 - [x] **Phase 1:** Core Physics Engine & Fixed-Point Validation
