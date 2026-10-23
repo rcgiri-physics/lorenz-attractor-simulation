@@ -1,0 +1,11 @@
+name: physverify
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rcgiri-physics/physverify@v0.4.2
+        with:
+          specs: tests/verify_*.py
+          install: -r requirements.txt
