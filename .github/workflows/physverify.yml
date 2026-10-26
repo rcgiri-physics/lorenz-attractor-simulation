@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: rcgiri-physics/physverify@v0.4.2
+      - uses: rcgiri-physics/physverify@v0.6.0
         with:
           specs: tests/verify_*.py
           install: -r requirements.txt
